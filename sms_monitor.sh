@@ -39,7 +39,6 @@ function dingtalk_message(){
  	else
  		return 1
  	fi
-
 }
 
 function monitor_and_forward(){

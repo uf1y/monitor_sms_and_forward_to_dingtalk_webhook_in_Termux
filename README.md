@@ -5,7 +5,8 @@ Monitor Android SMS sqlite database, and forward the new SMS received by calling
 
 - You have an Android Phone with SMS card inserted.
 - Termux has been installed on your Android Phone
-- You've got root privileges
+- You've got root privilege
+- sqlite has been installed
 
 # Deploy
 
