@@ -1,6 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
+# Monitor Android SMS sqlite database, and forward the new SMS received by calling Dingtalk robot webhook API
+
 date "+%Y%-m-%d %H:%M:%S" >> /tmp/sms_monitor_running.log
 
+# Get Dingtalk token from your robot configuration interface.
 DINGTALK_ACCESS_TOKEN="95337b1ad3482***63"
 DINGTALK_API="https://oapi.dingtalk.com/robot/send?access_token="
 
@@ -68,12 +71,12 @@ case "$1" in
 		echo $ret
 		;;
 	*)
-		echo "Run with command \"sms.sh --init\" first, and then run \"sms.sh --monitor\" in crontab"
-		echo "Usage: sms.sh <cmd>"
+		echo "Run with command \"sms_monitor.sh --init\" first, and then run \"sms_monitor.sh --monitor\" in crontab"
+		echo "Usage: sms_monitor.sh <cmd>"
 		echo "  --monitor   Start to monitor and forward new sms"
 		echo "  --init      Init forward record table"
 		echo "  --test      Send the last sms to dingtalk"
 		echo ""
-		echo "crontab example:\"*/1 * * * * sms.sh --monitor\""
+		echo "crontab example:\"*/1 * * * * sms_monitor.sh --monitor\""
 		;;
 esac
